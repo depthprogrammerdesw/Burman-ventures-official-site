@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="BURMAN VENTURES Pvt. Ltd. - Known for Trust, Loyalty & Security">
+
+    <title>BURMAN VENTURES Pvt. Ltd.</title>
+
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Courier New", monospace;
+            color: white;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(circle at 20% 20%,
+                    rgba(255, 0, 80, 0.30),
+                    transparent 30%),
+
+                radial-gradient(circle at 80% 30%,
+                    rgba(0, 255, 255, 0.25),
+                    transparent 30%),
+
+                radial-gradient(circle at 50% 80%,
+                    rgba(140, 0, 255, 0.30),
+                    transparent 35%),
+
+                #030712;
+
+            background-size: 200% 200%;
+
+            animation: backgroundMove 12s ease infinite;
+        }
+
+
+        /* =========================
+           ANIMATED RGB BACKGROUND
+        ========================= */
+
+        @keyframes backgroundMove {
+
+            0% {
+                background-position: 0% 0%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+
+        }
+
+
+        /* Moving RGB grid */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -3;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(0,255,255,0.07) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,0,255,0.07) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+
+            animation: gridMove 8s linear infinite;
+        }
+
+
+        @keyframes gridMove {
+
+            from {
+                transform: translate(0,0);
+            }
+
+            to {
+                transform: translate(50px,50px);
+            }
+
+        }
+
+
+        /* =========================
+           FLOATING RGB ORBS
+        ========================= */
+
+        .orb {
+
+            position: fixed;
+
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            filter: blur(70px);
+
+            opacity: 0.25;
+
+            z-index: -2;
+
+            animation: floating 10s ease-in-out infinite;
+        }
+
+
+        .orb-one {
+
+            background: red;
+
+            top: 5%;
+            left: 5%;
+        }
+
+
+        .orb-two {
+
+            background: cyan;
+
+            right: 5%;
+            top: 35%;
+
+            animation-delay: 2s;
+        }
+
+
+        .orb-three {
+
+            background: magenta;
+
+            left: 40%;
+            bottom: 0;
+
+            animation-delay: 4s;
+        }
+
+
+        @keyframes floating {
+
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(60px, -50px) scale(1.25);
+            }
+
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+
+            width: 100%;
+
+            padding: 20px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            background: rgba(0,0,0,0.45);
+
+            border-bottom: 1px solid rgba(0,255,255,0.3);
+
+            backdrop-filter: blur(12px);
+
+            position: relative;
+
+            z-index: 10;
+        }
+
+
+        .logo {
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            color: white;
+
+            text-shadow:
+                0 0 8px cyan,
+                0 0 15px magenta;
+        }
+
+
+        .status {
+
+            color: #00ff88;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 88vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+        }
+
+
+        /* Main RGB heading */
+
+        .hero h1 {
+
+            font-family: Arial, sans-serif;
+
+            font-size: clamp(42px, 8vw, 90px);
+
+            font-weight: 900;
+
+            letter-spacing: 5px;
+
+            color: white;
+
+            animation:
+                rgbText 4s linear infinite,
+                headingFloat 4s ease-in-out infinite;
+
+            text-shadow:
+                0 0 5px red,
+                0 0 15px red,
+                0 0 25px cyan,
+                0 0 40px magenta;
+        }
+
+
+        @keyframes rgbText {
+
+            0% {
+                text-shadow:
+                    0 0 10px red,
+                    0 0 25px red,
+                    0 0 40px magenta;
+            }
+
+            33% {
+                text-shadow:
+                    0 0 10px cyan,
+                    0 0 25px cyan,
+                    0 0 40px blue;
+            }
+
+            66% {
+                text-shadow:
+                    0 0 10px lime,
+                    0 0 25px lime,
+                    0 0 40px yellow;
+            }
+
+            100% {
+                text-shadow:
+                    0 0 10px red,
+                    0 0 25px red,
+                    0 0 40px magenta;
+            }
+
+        }
+
+
+        @keyframes headingFloat {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+        }
+
+
+        /* =========================
+           TAGLINE
+        ========================= */
+
+        .tagline {
+
+            margin-top: 18px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: clamp(18px, 3vw, 28px);
+
+            font-weight: bold;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff1744,
+                    #00e5ff,
+                    #76ff03,
+                    #ff00ff
+                );
+
+            background-size: 300%;
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            animation: gradientText 5s linear infinite;
+        }
+
+
+        @keyframes gradientText {
+
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 300%;
+            }
+
+        }
+
+
+        /* =========================
+           PROGRAMMING TERMINAL
+        ========================= */
+
+        .terminal {
+
+            width: min(850px, 95%);
+
+            margin-top: 35px;
+
+            padding: 25px;
+
+            text-align: left;
+
+            background: rgba(0,0,0,0.65);
+
+            border: 1px solid rgba(0,255,255,0.35);
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 0 25px rgba(0,255,255,0.12),
+                inset 0 0 25px rgba(255,0,255,0.05);
+
+            backdrop-filter: blur(10px);
+        }
+
+
+        .terminal-top {
+
+            display: flex;
+
+            gap: 7px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .dot {
+
+            width: 12px;
+            height: 12px;
+
+            border-radius: 50%;
+        }
+
+
+        .red {
+            background: #ff1744;
+        }
+
+
+        .yellow {
+            background: #ffea00;
+        }
+
+
+        .green {
+            background: #00e676;
+        }
+
+
+        .code {
+
+            line-height: 1.8;
+
+            font-size: 15px;
+
+            color: #b8c7d9;
+        }
+
+
+        .keyword {
+            color: #ff79c6;
+        }
+
+
+        .function {
+            color: #50fa7b;
+        }
+
+
+        .string {
+            color: #f1fa8c;
+        }
+
+
+        .comment {
+            color: #6272a4;
+        }
+
+
+        /* =========================
+           DESCRIPTION
+        ========================= */
+
+        .description {
+
+            max-width: 750px;
+
+            margin-top: 30px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color: #d5dbe5;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 18px;
+
+            margin-top: 35px;
+        }
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 16px 28px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+
+            font-weight: bold;
+
+            font-size: 15px;
+
+            border: 2px solid transparent;
+
+            transition: 0.3s;
+
+            backdrop-filter: blur(10px);
+        }
+
+
+        .btn:hover {
+
+            transform:
+                translateY(-6px)
+                scale(1.04);
+
+        }
+
+
+        .about-business {
+
+            background: rgba(0,120,255,0.35);
+
+            border-color: #00c8ff;
+
+            box-shadow: 0 0 20px rgba(0,200,255,0.35);
+        }
+
+
+        .join {
+
+            background: rgba(0,220,100,0.3);
+
+            border-color: #00ff88;
+
+            box-shadow: 0 0 20px rgba(0,255,100,0.3);
+        }
+
+
+        .reviews {
+
+            background: rgba(180,0,255,0.3);
+
+            border-color: #e000ff;
+
+            box-shadow: 0 0 20px rgba(220,0,255,0.3);
+        }
+
+
+        .about {
+
+            background: rgba(255,50,80,0.3);
+
+            border-color: #ff1744;
+
+            box-shadow: 0 0 20px rgba(255,0,60,0.3);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 30px;
+
+            background: rgba(0,0,0,0.55);
+
+            border-top:
+                1px solid rgba(0,255,255,0.25);
+
+            color: #aeb7c4;
+
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 10px;
+
+            }
+
+
+            .hero h1 {
+
+                letter-spacing: 2px;
+
+            }
+
+
+            .terminal {
+
+                font-size: 13px;
+
+                padding: 18px;
+
+            }
+
+
+            .buttons {
+
+                flex-direction: column;
+
+                width: 90%;
+
+            }
+
+
+            .btn {
+
+                width: 100%;
+
+                text-align: center;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- RGB background -->
+
+    <div class="orb orb-one"></div>
+
+    <div class="orb orb-two"></div>
+
+    <div class="orb orb-three"></div>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            &lt;BURMAN_VENTURES /&gt;
+        </div>
+
+        <div class="status">
+            ● SYSTEM ONLINE
+        </div>
+
+    </nav>
+
+
+    <!-- Main hero -->
+
+    <main>
+
+        <section class="hero">
+
+
+            <h1>
+                BURMAN VENTURES
+            </h1>
+
+
+            <div class="tagline">
+                Known for Trust, Loyalty &amp; Security
+            </div>
+
+
+            <!-- Programming-style terminal -->
+
+            <div class="terminal">
+
+                <div class="terminal-top">
+
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+
+                </div>
+
+
+                <div class="code">
+
+                    <span class="comment">
+                        // Welcome to Burman Ventures
+                    </span>
+
+                    <br>
+
+                    <span class="keyword">const</span>
+                    company =
+                    <span class="string">
+                        "BURMAN VENTURES Pvt. Ltd."
+                    </span>;
+
+                    <br><br>
+
+                    <span class="keyword">function</span>
+                    <span class="function">
+                        buildFuture()
+                    </span> {
+
+                    <br>
+
+                    &nbsp;&nbsp;
+                    trust =
+                    <span class="string">
+                        "100%"
+                    </span>;
+
+                    <br>
+
+                    &nbsp;&nbsp;
+                    security =
+                    <span class="string">
+                        "Priority"
+                    </span>;
+
+                    <br>
+
+                    &nbsp;&nbsp;
+                    loyalty =
+                    <span class="string">
+                        "Always"
+                    </span>;
+
+                    <br>
+
+                    &nbsp;&nbsp;
+                    <span class="keyword">return</span>
+                    innovation;
+
+                    <br>
+
+                    }
+
+                    <br><br>
+
+                    <span class="comment">
+                        // Building possibilities. Creating opportunities.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="description">
+
+                Welcome to BURMAN VENTURES — where ideas,
+                technology and opportunity come together.
+
+                <br><br>
+
+                We believe strong ventures are built on
+                strong relationships. Explore our business,
+                discover opportunities and become part of
+                our growing journey.
+
+            </p>
+
+
+            <!-- Navigation buttons -->
+
+            <div class="buttons">
+
+
+                <a
+                    href="business.html"
+                    class="btn about-business">
+
+                    ABOUT OUR BUSINESS
+
+                </a>
+
+
+                <a
+                    href="join.html"
+                    class="btn join">
+
+                    HOW TO JOIN US
+
+                </a>
+
+
+                <a
+                    href="reviews.html"
+                    class="btn reviews">
+
+                    CUSTOMER REVIEWS
+
+                </a>
+
+
+                <a
+                    href="about.html"
+                    class="btn about">
+
+                    ABOUT US
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Burman Ventures Pvt. Ltd.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Built with innovation, trust and technology.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
