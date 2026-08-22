@@ -611,55 +611,244 @@
         }
 
 
-        /* =========================
-           MOBILE
-        ========================= */
+       /* =====================================================
+   MOBILE OPTIMIZATION
+===================================================== */
 
-        @media (max-width: 700px) {
+@media (max-width: 700px) {
 
-            nav {
+    /* ---------- NAVIGATION ---------- */
 
-                flex-direction: column;
+    nav {
+        width: 100%;
 
-                gap: 10px;
+        padding: 10px 16px;
 
-            }
+        display: flex;
 
+        flex-direction: column;
 
-            .hero h1 {
+        align-items: flex-start;
 
-                letter-spacing: 2px;
+        gap: 3px;
 
-            }
+        background:
+            rgba(0,0,0,0.75);
 
+        border-bottom:
+            1px solid
+            rgba(0,255,255,0.3);
 
-            .terminal {
+        backdrop-filter:
+            blur(10px);
 
-                font-size: 13px;
+        position: relative;
 
-                padding: 18px;
-
-            }
-
-
-            .buttons {
-
-                flex-direction: column;
-
-                width: 90%;
-
-            }
+        z-index: 10;
+    }
 
 
-            .btn {
+    /* ---------- LOGO ---------- */
 
-                width: 100%;
+   .brand {
+    width: 170px;
+    height: 62px;
 
-                text-align: center;
+    display: flex;
+    align-items: center;
 
-            }
+    overflow: hidden;
+}
 
-        }
+.brand img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+   
+
+    /* ---------- SYSTEM STATUS ---------- */
+
+    .status {
+        margin-top: 0;
+
+        margin-left: 2px;
+
+        font-size: 10px;
+
+        line-height: 1.2;
+
+        white-space: nowrap;
+
+        text-shadow:
+            0 0 6px
+            rgba(0,255,136,0.8);
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: auto;
+
+        padding:
+            45px 15px 35px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    /* ---------- MAIN TITLE ---------- */
+
+    .hero h1 {
+        font-size:
+            clamp(32px, 10vw, 48px);
+
+        line-height: 1.05;
+
+        letter-spacing: 2px;
+
+        margin: 0;
+
+        word-break: normal;
+    }
+
+
+    /* ---------- TAGLINE ---------- */
+
+    .tagline {
+        margin-top: 12px;
+
+        font-size: 14px;
+
+        line-height: 1.4;
+
+        max-width: 90%;
+    }
+
+
+    /* ---------- TERMINAL ---------- */
+
+    .terminal {
+        width: 100%;
+
+        max-width: 420px;
+
+        margin-top: 22px;
+
+        padding: 16px;
+
+        border-radius: 12px;
+
+        overflow: hidden;
+    }
+
+
+    .terminal-top {
+        margin-bottom: 12px;
+    }
+
+
+    .dot {
+        width: 9px;
+
+        height: 9px;
+    }
+
+
+    .code {
+        font-size: 10px;
+
+        line-height: 1.65;
+
+        overflow-x: auto;
+
+        white-space: normal;
+    }
+
+
+    /* ---------- DESCRIPTION ---------- */
+
+    .description {
+        width: 100%;
+
+        max-width: 420px;
+
+        margin-top: 20px;
+
+        font-size: 14px;
+
+        line-height: 1.55;
+
+        padding: 0 5px;
+    }
+
+
+    /* ---------- BUTTONS ---------- */
+
+    .buttons {
+        width: 100%;
+
+        max-width: 420px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-top: 22px;
+    }
+
+
+    .btn {
+        width: 100%;
+
+        padding: 12px 15px;
+
+        border-radius: 9px;
+
+        font-size: 12px;
+
+        text-align: center;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding: 18px 12px;
+
+        font-size: 11px;
+
+        line-height: 1.5;
+    }
+
+
+    /* ---------- BACKGROUND ORBS ---------- */
+
+    .orb {
+        width: 150px;
+
+        height: 150px;
+
+        filter: blur(50px);
+
+        opacity: 0.18;
+    
+    }   /* ← THIS closes @media */
+
+
+
+          
 
     </style>
 
